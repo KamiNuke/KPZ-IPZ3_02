@@ -93,8 +93,7 @@ prepare-commit-msg - автоматично додає зміст до пові�
 Після додавання
 
 ![4](./screenshots/4.png)
-
-` 
+```
 // Load .env variables
 import dotenv from 'dotenv';
 
@@ -110,4 +109,4 @@ const environment = process.env.ENVIRONMENT || 'production';
 console.log(`🚀 Server running on port: ${port}`);
 console.log(`🔑 API Key: ${apiKey}`);
 console.log(`🌍 Environment: ${environment}`);
-`
+```
