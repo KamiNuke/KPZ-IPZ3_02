@@ -87,7 +87,7 @@ pages/PostsNew.tsx
 
 UI компоненти 
 components/ui/Modal/index.ts
-![modalIndex](./screenshots/ModalIndex.png)
+![modalIndex](./screenshots/modalIndex.png)
 
 components/ui/Modal/Modal.tsx
 ![modal](./screenshots/modal.png)
