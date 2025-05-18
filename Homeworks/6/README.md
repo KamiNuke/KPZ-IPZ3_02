@@ -31,36 +31,91 @@
 
 Усе працює, можна приступати к роботі
 
-Спочатку в папці routes створюю posts.ts
+Реалізація кратко:
+Розроблена сторінка колекції постів зі сторінкой окремого поста та функціональностю редактування та створення нового поста і усе це з використанням мок-сервіса для емуляціїї API запитів, await delay в майбутньому будуть замінені на Http запити, тому і використовуються для емуляції запитів щоб показати на екрані загрузку
 
-![4](./screenshots/4.png)
+types/Post.ts
+![types](./screenshots/types.png)
 
-Потім в файлі src/routeTree.gen.ts додаю дані роута posts
+Zustand-стор для управління станом постів
+store/posts/index.ts
+![store1](./screenshots/store1.png)
 
-![5](./screenshots/5.png)
+![store2](./screenshots/store2.png)
 
+Сервіс для роботи з API з локальним сховищем та симуляції мереживих запитів
+services/posts.service.ts
+![service1](./screenshots/service1.png)
 
+![service2](./screenshots/service2.png)
 
-![4](./screenshots/4.png)
+Маршрути поста
+routes/posts/$id.ts
+![routes1](./screenshots/routes1.png)
 
- 
+routes/posts/index.ts
+![routes2](./screenshots/routes2.png)
 
-Рекомендації
--	Використовуйте useEffect та useState для завантаження та оновлення даних.
--	Для створення нових елементів рекомендується використовувати окремий маршрут (/posts/new).
--	Забезпечте просту валідацію полів (наприклад, обов’язкові поля не можуть бути порожніми).
--	Для маршрутизації використовується TanStack Router.
--	Запити до бекенду мають емулюватися через виклики мок-функцій, таких як:
--	getAllEntities()
--	getEntityById(id)
--	createEntity(data)
--	updateEntity(id, data)
--	deleteEntity(id)
--	Мок-функції мають бути винесені в окремий модуль і повертати дані у форматі, аналогічному відповіді майбутнього HTTP API.
--	У подальших заняттях ці функції будуть замінені на реальні HTTP-запити.
-Вимоги до звіту
--	Результат роботи має бути оформлений у вигляді GitHub-репозиторію.
--	У репозиторії має бути створено окремий файл report.md, який містить:
--	короткий опис реалізованого функціоналу;
--	скріншоти сторінки колекції та сторінки окремого екземпляра (режими перегляду, редагування, створення);
--	коментарі щодо особливостей реалізації або проблем, з якими зіткнулися під час виконання.
+routes/posts/new.ts
+![routes3](./screenshots/routes3.png)
+
+React компонент для відображеня списску постів
+pages/Posts.tsx
+![pagesPost1](./screenshots/pagesPost1.png)
+
+![pagesPost2](./screenshots/pagesPost2.png)
+
+React компонент для перегляду редагування поста
+pages/PostsContent.tsx
+![pagesContent1](./screenshots/pagesContent1.png)
+
+![pagesContent2](./screenshots/pagesContent2.png)
+
+![pagesContent3](./screenshots/pagesContent3.png)
+
+![pagesContent4](./screenshots/pagesContent4.png)
+
+![pagesContent5](./screenshots/pagesContent5.png)
+
+React компонент для створення нового поста
+pages/PostsNew.tsx
+![pagesNew1](./screenshots/pagesNew1.png)
+
+![pagesNew2](./screenshots/pagesNew2.png)
+
+![pagesNew3](./screenshots/pagesNew3.png)
+
+UI компоненти 
+components/ui/Modal/index.ts
+![modalIndex](./screenshots/ModalIndex.png)
+
+components/ui/Modal/Modal.tsx
+![modal](./screenshots/modal.png)
+
+components/ui/PostsCard/index.ts
+![cardIndex](./screenshots/cardIndex.png)
+
+components/ui/PostsCard/PostsCard.tsx
+![postcard](./screenshots/postcard.png)
+
+Результати роботи:
+![res1](./screenshots/res1.png)
+
+![res2](./screenshots/res2.png)
+
+![res3](./screenshots/res3.png)
+
+![res4](./screenshots/res4.png)
+
+![res5](./screenshots/res5.png)
+
+![res6](./screenshots/res6.png)
+
+![res7](./screenshots/res7.png)
+
+![res8](./screenshots/res8.png)
+
+![res9](./screenshots/res9.png)
+
+Висновок
+Під час роботи навчився створювати інтерфейс для роботи з CRUD-операціями використовуючи Rest API та тайпскріпт у проекті vite-react-boilerplate, усі компоненти реалізовані зі стейстами завантеження і обробками помилок. Реалізована валідація обов'язкових полів форми та використання модального вікна для підтвердження видалення поста, яке забезпечує додатковий рівень безпеки для користувачів. Реалізован мок-сервіс який потім можна замінити на реальні API-запити без необхідності зміни логіки компонентів.
