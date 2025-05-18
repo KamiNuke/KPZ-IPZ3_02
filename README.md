@@ -13,3 +13,11 @@
 [Лабораторна 6](Homeworks/6/README.md)
 
 [Лабораторна 7](Homeworks/7/README.md)
+
+[Лабораторна 8](Homeworks/8/README.md)
+
+[Лабораторна 9](Homeworks/9/README.md)
+
+[Frontend](https://github.com/KamiNuke/kpz-front)
+
+[Backend](https://github.com/KamiNuke/kpz-back)
